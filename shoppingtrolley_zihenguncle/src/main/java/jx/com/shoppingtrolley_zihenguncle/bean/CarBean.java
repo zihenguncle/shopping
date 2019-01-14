@@ -2,13 +2,15 @@ package jx.com.shoppingtrolley_zihenguncle.bean;
 
 import android.widget.CheckBox;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class CarBean {
+public class CarBean implements Serializable {
 
     private String status;
     private String messages;
     private List<Result> result;
+
 
     public String getStatus() {
         return status;
@@ -34,13 +36,22 @@ public class CarBean {
         this.result = result;
     }
 
-    public class Result {
+    public static class Result implements Serializable{
         private int commodityId;
         private String commodityName;
         private String pic;
         private Double price;
         private int count;
         private boolean check;
+
+        public Result(int commodityId, String commodityName, String pic, Double price, int count, boolean check) {
+            this.commodityId = commodityId;
+            this.commodityName = commodityName;
+            this.pic = pic;
+            this.price = price;
+            this.count = count;
+            this.check = check;
+        }
 
         public boolean isCheck() {
             return check;

@@ -23,7 +23,9 @@ import jx.com.shoppingtrolley_zihenguncle.R;
 import jx.com.shoppingtrolley_zihenguncle.bean.CarBean;
 import jx.com.shoppingtrolley_zihenguncle.customview.ShopCar_add_minus;
 
-
+/**
+ * @author 郭淄恒
+ */
 public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
 
     private List<CarBean.Result> data;
@@ -47,23 +49,29 @@ public class CarAdapter extends RecyclerView.Adapter<CarAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(@NonNull final CarAdapter.ViewHolder viewHolder, int i) {
-        //viewHolder.checkBox.setChecked(data.get(i).isCheck());
+    public void onBindViewHolder(@NonNull final CarAdapter.ViewHolder viewHolder, final int i) {
+        viewHolder.checkBox.setChecked(data.get(i).isCheck());
         Glide.with(context).load(data.get(i).getPic()).into(viewHolder.imageView);
         viewHolder.textView_name.setText(data.get(i).getCommodityName());
         viewHolder.textView_price.setText("￥"+data.get(i).getPrice());
         viewHolder.customview_num.setEditNum(this,data,i);
-        /*viewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+        viewHolder.customview_num.setOnCallBackListener(new ShopCar_add_minus.onCallBackListener() {
             @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                viewHolder.customview_num.setOnCallBackListener(new ShopCar_add_minus.onCallBackListener() {
-                    @Override
-                    public void getCheckState() {
-
-                    }
-                });
+            public void getCheckState() {
+                if(editCallBack != null){
+                    editCallBack.editcallback();
+                }
             }
-        });*/
+        });
+        viewHolder.checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, final boolean b) {
+                data.get(i).setCheck(b);
+                if(editCallBack != null){
+                    editCallBack.editcallback();
+                }
+            }
+        });
     }
 
     @Override

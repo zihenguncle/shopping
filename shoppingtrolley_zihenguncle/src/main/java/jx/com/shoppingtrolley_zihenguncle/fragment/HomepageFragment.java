@@ -53,6 +53,7 @@ import jx.com.shoppingtrolley_zihenguncle.view.IView;
 
 /**
  * @author 郭淄恒
+ * 主页
  */
 public class HomepageFragment extends BaseFragment implements IView {
 

@@ -22,7 +22,7 @@
         />
     <EditText
         android:id="@+id/edit_register_phone"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dp_190"
         android:layout_height="wrap_content"
         android:hint="手机号"
         android:layout_marginTop="@dimen/dp_178"
@@ -32,6 +32,7 @@
         android:textColorHint="@color/colorWhite"
         android:background="@null"
         android:textColor="@color/colorWhite"
+        android:inputType="number"
         />
     <View
         android:id="@+id/view_line1"
@@ -64,6 +65,7 @@
         android:layout_below="@+id/view_line1"
         android:background="@null"
         android:textColor="@color/colorWhite"
+        android:inputType="number"
         />
     <TextView
         android:id="@+id/get_code"
@@ -97,7 +99,7 @@
         />
     <EditText
         android:id="@+id/edit_register_pass"
-        android:layout_width="wrap_content"
+        android:layout_width="@dimen/dp_190"
         android:layout_height="wrap_content"
         android:hint="登录密码"
         android:layout_marginTop="@dimen/dp_20"
@@ -109,6 +111,7 @@
         android:layout_below="@+id/view_line2"
         android:background="@null"
         android:textColor="@color/colorWhite"
+        android:inputType="number"
         />
     <ImageView
         android:id="@+id/register__eye"

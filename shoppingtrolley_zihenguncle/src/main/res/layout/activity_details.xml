@@ -60,7 +60,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_below="@+id/relative"
-        android:layout_above="@+id/relativebottom"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -159,9 +158,9 @@
     </ScrollView>
 
     <RelativeLayout
+        android:id="@+id/shopcar_bg_relative"
         android:layout_width="@dimen/dp_40"
         android:layout_height="@dimen/dp_31"
-        android:id="@+id/shopcar_bg_relative"
         android:background="@drawable/shopcar_bg"
         android:layout_marginTop="500dp"
         android:layout_marginLeft="330dp"

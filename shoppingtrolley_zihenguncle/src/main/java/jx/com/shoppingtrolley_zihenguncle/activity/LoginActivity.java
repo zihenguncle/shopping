@@ -16,6 +16,8 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.greenrobot.eventbus.EventBus;
+
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -29,12 +31,17 @@ import butterknife.OnClick;
 import butterknife.OnTouch;
 import jx.com.shoppingtrolley_zihenguncle.R;
 import jx.com.shoppingtrolley_zihenguncle.base.BaseActivity;
+import jx.com.shoppingtrolley_zihenguncle.bean.EventBusBean;
 import jx.com.shoppingtrolley_zihenguncle.bean.LoginBean;
 import jx.com.shoppingtrolley_zihenguncle.persenter.IPersenterImpl;
+import jx.com.shoppingtrolley_zihenguncle.tag.EventTag;
 import jx.com.shoppingtrolley_zihenguncle.tool.VerifyUtils;
 import jx.com.shoppingtrolley_zihenguncle.url.Apis;
 import jx.com.shoppingtrolley_zihenguncle.view.IView;
 
+/**
+ * @author 郭淄恒
+ */
 public class LoginActivity extends BaseActivity implements IView {
 
     @BindView(R.id.login_edit_phonenum)
@@ -156,10 +163,12 @@ public class LoginActivity extends BaseActivity implements IView {
     @Override
     public void success(Object data) {
         if(data instanceof LoginBean){
+            String nickName = ((LoginBean) data).getResult().getNickName();
             int userId = ((LoginBean) data).getResult().getUserId();
             String sessionId = ((LoginBean) data).getResult().getSessionId();
             edit.putString("userId",userId+"");
             edit.putString("sessionId",sessionId);
+            edit.putString("nickName",nickName);
             Log.i("TAG",userId+"+++++++"+sessionId);
             edit.commit();
             toast(((LoginBean) data).getMessage());

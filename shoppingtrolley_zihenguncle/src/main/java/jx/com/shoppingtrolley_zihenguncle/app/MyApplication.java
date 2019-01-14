@@ -10,6 +10,9 @@ import com.facebook.drawee.backends.pipeline.Fresco;
 
 import butterknife.ButterKnife;
 
+/**
+ * @author 郭淄恒
+ */
 public class MyApplication extends Application {
 
     //绘制页面时参照的设计图宽度

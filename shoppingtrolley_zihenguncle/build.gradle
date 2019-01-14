@@ -76,5 +76,7 @@ dependencies {
     implementation 'com.github.xiaohaibin:XBanner:1.6.1'
     implementation "com.daimajia.swipelayout:library:1.2.0@aar"
 
+    //城市三级联动
+    implementation 'com.github.open-android:CityPickerWebView:0.1.0'
 
 }

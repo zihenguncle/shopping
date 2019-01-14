@@ -1,10 +1,14 @@
 package jx.com.shoppingtrolley_zihenguncle.tool;
 
+import android.widget.Toast;
+
 import java.util.HashSet;
 import java.util.Random;
 import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+
+import jx.com.shoppingtrolley_zihenguncle.app.MyApplication;
 
 import static java.util.regex.Pattern.compile;
 
@@ -48,6 +52,10 @@ public class VerifyUtils {
             sb.append("" + i);
         }
         return sb.toString();
+    }
+
+    public void toast(String str){
+        Toast.makeText(MyApplication.getApplicationContent(),str,Toast.LENGTH_SHORT).show();
     }
 
 }

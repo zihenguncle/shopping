@@ -6,12 +6,12 @@
     android:layout_height="match_parent"
     tools:context=".activity.HomepageActivity">
 
-    <android.support.v4.view.ViewPager
+    <jx.com.shoppingtrolley_zihenguncle.customview.CustomViewPager
         android:id="@+id/homepage_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginBottom="@dimen/dp_55"
-        ></android.support.v4.view.ViewPager>
+        ></jx.com.shoppingtrolley_zihenguncle.customview.CustomViewPager>
 
     <RadioGroup
         android:id="@+id/homepage_radiogroup"

@@ -25,9 +25,14 @@ import rx.Scheduler;
 import rx.android.schedulers.AndroidSchedulers;
 import rx.schedulers.Schedulers;
 
+/**
+ * @author 郭淄恒
+ * 请求网络
+ */
 public class RetrofitUtils {
 
-    private OkHttpClient mClient;//http://172.17.8.100/small/
+    private OkHttpClient mClient;
+    //private static String BASE_URL = "http://172.17.8.100/small/";
     private static String BASE_URL = "http://mobile.bwstudent.com/small/";
     //单例
     private static RetrofitUtils instance;

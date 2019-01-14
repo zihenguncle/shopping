@@ -18,6 +18,10 @@ import jx.com.shoppingtrolley_zihenguncle.persenter.IPersenterImpl;
 import jx.com.shoppingtrolley_zihenguncle.url.Apis;
 import jx.com.shoppingtrolley_zihenguncle.view.IView;
 
+/**
+ * @author 郭淄恒
+ * 我的足迹
+ */
 public class MyFootPrint extends AppCompatActivity implements IView {
 
     @BindView(R.id.foot_xrecycle)

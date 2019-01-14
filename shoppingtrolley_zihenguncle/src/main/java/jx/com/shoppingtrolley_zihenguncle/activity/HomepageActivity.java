@@ -14,16 +14,20 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import jx.com.shoppingtrolley_zihenguncle.R;
+import jx.com.shoppingtrolley_zihenguncle.customview.CustomViewPager;
 import jx.com.shoppingtrolley_zihenguncle.fragment.BillFragment;
 import jx.com.shoppingtrolley_zihenguncle.fragment.CircleFragment;
 import jx.com.shoppingtrolley_zihenguncle.fragment.HomepageFragment;
 import jx.com.shoppingtrolley_zihenguncle.fragment.MineFragment;
 import jx.com.shoppingtrolley_zihenguncle.fragment.ShoppingcartFragment;
 
+/**
+ * @author 郭淄恒
+ */
 public class HomepageActivity extends AppCompatActivity {
 
     @BindView(R.id.homepage_viewpager)
-    ViewPager viewPager;
+    CustomViewPager viewPager;
     @BindView(R.id.homepage_radiogroup)
     RadioGroup radioGroup;
     @BindView(R.id.homepage_but_homepage)

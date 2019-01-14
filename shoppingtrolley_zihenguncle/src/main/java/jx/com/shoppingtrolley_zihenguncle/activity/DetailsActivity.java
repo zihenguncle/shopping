@@ -43,6 +43,9 @@ import jx.com.shoppingtrolley_zihenguncle.tag.EventTag;
 import jx.com.shoppingtrolley_zihenguncle.url.Apis;
 import jx.com.shoppingtrolley_zihenguncle.view.IView;
 
+/**
+ * @author 郭淄恒
+ */
 public class DetailsActivity extends BaseActivity implements IView {
 
     @BindView(R.id.details_banner)
@@ -104,15 +107,19 @@ public class DetailsActivity extends BaseActivity implements IView {
 
     private void addCar(List<AddBean> list){
         String string="[";
-        for (int i=0;i<list.size();i++){
-            if(Integer.valueOf(commodityId)==list.get(i).getCommodityId()){
-                int count = list.get(i).getCount();
-                count++;
-                list.get(i).setCount(count);
-                break;
-            }else if(i==list.size()-1){
-                list.add(new AddBean(Integer.valueOf(commodityId),1));
-                break;
+        if(list.size()==0){
+            list.add(new AddBean(commodityId,1));
+        }else {
+            for (int i=0;i<list.size();i++){
+                if(Integer.valueOf(commodityId)==list.get(i).getCommodityId()){
+                    int count = list.get(i).getCount();
+                    count++;
+                    list.get(i).setCount(count);
+                    break;
+                }else if(i==list.size()-1){
+                    list.add(new AddBean(Integer.valueOf(commodityId),1));
+                    break;
+                }
             }
         }
         for (AddBean resultBean:list){

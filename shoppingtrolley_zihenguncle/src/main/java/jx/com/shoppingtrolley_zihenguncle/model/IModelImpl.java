@@ -7,6 +7,9 @@ import java.util.Map;
 import jx.com.shoppingtrolley_zihenguncle.callback.ICallBack;
 import jx.com.shoppingtrolley_zihenguncle.network.RetrofitUtils;
 
+/**
+ * @author 郭淄恒
+ */
 public class IModelImpl implements IModel {
     @Override
     public void requestData(String url, Map<String, String> map, final Class clazz, final ICallBack iCallBack) {

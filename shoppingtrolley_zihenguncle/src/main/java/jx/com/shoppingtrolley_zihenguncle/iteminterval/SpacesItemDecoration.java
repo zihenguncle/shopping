@@ -4,6 +4,9 @@ import android.graphics.Rect;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
+/**
+ * @author 郭淄恒
+ */
 public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     private int space;
 
@@ -15,8 +18,8 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
     public void getItemOffsets(Rect outRect, View view,
                                RecyclerView parent, RecyclerView.State state) {
 
-        if (space==24){
-            outRect.left = space;
+        if (space==11){
+            outRect.top = space;
         }else {
             outRect.left = space;
             outRect.bottom = space;

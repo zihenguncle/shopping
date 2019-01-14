@@ -1,5 +1,8 @@
 package jx.com.shoppingtrolley_zihenguncle.addcar;
 
+/**
+ * @author 郭淄恒
+ */
 public class AddBean {
     private int commodityId;
     private int count;

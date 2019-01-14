@@ -26,7 +26,14 @@
         <activity android:name=".activity.RegisterActivity" />
         <activity android:name=".activity.HomepageActivity" />
         <activity android:name=".activity.DetailsActivity" />
-        <activity android:name=".activity.MyFootPrint"></activity>
+        <activity android:name=".activity.MyFootPrint" />
+        <activity android:name=".activity.OrderActivity" />
+        <activity android:name=".activity.MyAddressActivity" />
+        <activity android:name=".activity.AddressActivity" />
+        <activity android:name=".activity.MywalletActivity" />
+        <activity android:name=".circle.MyCircleActivity" />
+        <activity android:name=".activity.PersonalActivity" />
+        <activity android:name=".order.take_circle.TakeActivity"></activity>
     </application>
 
 </manifest>

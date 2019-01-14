@@ -11,6 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import butterknife.BindView;
@@ -30,9 +31,14 @@ public class ShopCar_add_minus extends LinearLayout {
     EditText editText_num;
     private int count;
 
+
+    CarAdapter mAdapter;
+    List<CarBean.Result> mList;
+    int position;
     public ShopCar_add_minus(Context context) {
         super(context);
         mContext=context;
+        mList = new ArrayList<>();
         initView();
     }
 
@@ -45,7 +51,7 @@ public class ShopCar_add_minus extends LinearLayout {
         View view= View.inflate(mContext, R.layout.custom_num,null);
         ButterKnife.bind(this,view);
         addView(view);
-        /*editText_num.addTextChangedListener(new TextWatcher() {
+        editText_num.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
 
@@ -55,7 +61,6 @@ public class ShopCar_add_minus extends LinearLayout {
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 try {
                     count = Integer.valueOf(charSequence.toString());
-                    editText_num.setText(count+"");
                     mList.get(position).setCount(count);
                 }catch (Exception e){
                     mList.get(position).setCount(count);
@@ -69,7 +74,7 @@ public class ShopCar_add_minus extends LinearLayout {
             public void afterTextChanged(Editable editable) {
 
             }
-        });*/
+        });
     }
     @OnClick({R.id.text_jia,R.id.text_jian})
     public void getViewClick(View view){
@@ -82,7 +87,7 @@ public class ShopCar_add_minus extends LinearLayout {
                callBackListener.getCheckState();
                break;
             case R.id.text_jian:
-                if(count>0){
+                if(count>1){
                     count--;
                 }else {
                     Toast.makeText(mContext,"手下留情",Toast.LENGTH_SHORT).show();
@@ -97,9 +102,7 @@ public class ShopCar_add_minus extends LinearLayout {
         }
     }
 
-    CarAdapter mAdapter;
-    List<CarBean.Result> mList;
-    int position;
+
     public void setEditNum(CarAdapter adapter, List<CarBean.Result> list,int position){
         mAdapter = adapter;
         mList = list;

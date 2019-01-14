@@ -34,6 +34,7 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:layout_below="@+id/head_relative"
+            android:layout_above="@+id/ll_shoppingCar_bottom"
             android:layout_marginTop="@dimen/dp_5"
             >
         </android.support.v7.widget.RecyclerView>
@@ -83,7 +84,9 @@
                 android:layout_height="wrap_content"
                 android:text="￥0.00"
                 android:textSize="16sp"
-                android:textStyle="bold" />
+                android:textStyle="bold"
+                android:textColor="@color/colorRad"
+                />
         </LinearLayout>
 
         <TextView

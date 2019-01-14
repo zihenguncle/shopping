@@ -28,6 +28,9 @@ import jx.com.shoppingtrolley_zihenguncle.tool.VerifyUtils;
 import jx.com.shoppingtrolley_zihenguncle.url.Apis;
 import jx.com.shoppingtrolley_zihenguncle.view.IView;
 
+/**
+ * @author 郭淄恒
+ */
 public class RegisterActivity extends BaseActivity implements IView {
 
     @BindView(R.id.edit_register_phone)
